@@ -1,0 +1,29 @@
+{
+  "name": "react_learnings",
+  "version": "1.0.0",
+  "description": "\"# React_Learnings\"",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sachidanandshivade/React_Learnings.git"
+  },
+  "keywords": [
+    "React",
+    "npm"
+  ],
+  "author": "Sachi Shivade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sachidanandshivade/React_Learnings/issues"
+  },
+  "homepage": "https://github.com/Sachidanandshivade/React_Learnings#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

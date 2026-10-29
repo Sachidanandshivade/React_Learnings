@@ -3,6 +3,7 @@ import resList from "../utils/mockjData.js";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer.jsx";
 import {Link} from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus.js";
 
 const Body = () => {
 
@@ -22,6 +23,7 @@ const Body = () => {
         setFilteredList(json?.data?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? []);
     };
 
+    if(useOnlineStatus === false) return <h1>Oop's, You are Offline.</h1>;
 
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
     

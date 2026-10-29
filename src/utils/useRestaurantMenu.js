@@ -14,7 +14,7 @@ const useRestaurantMenu = (resId) => {
         const fetchRestaurant = async () => {
             try {
                 const res = await fetch(RESTAURANT_LIST_API);
-                const json = await res.join();
+                const json = await res.json();
 
                 const restaurants = json?.data?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle
             ?.restaurants ?? [];

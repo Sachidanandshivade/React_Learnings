@@ -11,6 +11,8 @@ const Body = () => {
     const [filteredList,setFilteredList] = useState([]);
 
     const [searchText,setSearchText] = useState("");
+    const onlineStatus = useOnlineStatus();
+
     useEffect(()=>{
         fetchData();
     },[]);
@@ -23,7 +25,7 @@ const Body = () => {
         setFilteredList(json?.data?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants ?? []);
     };
 
-    if(useOnlineStatus === false) return <h1>Oop's, You are Offline.</h1>;
+    if(onlineStatus === false) return <h1>Oop's, You are Offline.</h1>;
 
     return listOfRestaurants.length === 0 ? <Shimmer/> : (
     

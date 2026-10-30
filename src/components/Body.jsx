@@ -32,7 +32,7 @@ const Body = () => {
         <div className="body bg-pink-100">
             <div className="flex justify-around">
                 <div className="search m-2 p-2 ">
-                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
+                    <input type="text" className="border border-solid border-black  focus:border-blue-500 focus:ring-2 focus:ring-blue-500" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
         
                     }}/>

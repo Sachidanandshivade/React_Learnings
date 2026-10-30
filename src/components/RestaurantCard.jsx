@@ -8,7 +8,7 @@ const RestaurantCard = ({resObj}) => {
                 src={`https://media-assets.swiggy.com/swiggy/image/upload/${cloudinaryImageId}`}
             />
 
-            <h3 className="font-bold">{name}</h3>
+        <h3 className="font-bold">{name}</h3>
             <h4>{cuisines.join(", ")}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{costForTwo}</h4>

@@ -22,9 +22,14 @@
   },
   "homepage": "https://github.com/Sachidanandshivade/React_Learnings#readme",
   "devDependencies": {
-    "parcel": "^2.16.4"
+    "init": "^0.1.2",
+    "npx": "^10.2.2",
+    "parcel": "^2.16.4",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "react-router-dom": "^6.30.6"

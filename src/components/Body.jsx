@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard.jsx";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard.jsx";
 import resList from "../utils/mockjData.js";
 import {useState, useEffect} from "react";
 import Shimmer from "./Shimmer.jsx";
@@ -12,7 +12,7 @@ const Body = () => {
 
     const [searchText,setSearchText] = useState("");
     const onlineStatus = useOnlineStatus();
-
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
     useEffect(()=>{
         fetchData();
     },[]);
@@ -51,7 +51,9 @@ const Body = () => {
             {
                 filteredList.map((restaurant) => (
                     <Link  key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-                <RestaurantCard  resObj={restaurant} />
+                {
+                    restaurant.info.avgRating >= 4.3? <RestaurantCardPromoted resObj={restaurant} /> : <RestaurantCard  resObj={restaurant} />
+                }
                 </Link>
                 ))
             }

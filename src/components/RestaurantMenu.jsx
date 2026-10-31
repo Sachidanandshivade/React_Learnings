@@ -7,7 +7,7 @@ const IMG_URL =
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const {info, notFound} = useRestaurantMenu(resId);
+  const {info,menuCards, notFound} = useRestaurantMenu(resId);
 
   if (notFound) return <h2>Restaurant not found</h2>;
   if (!info) return <Shimmer />;

@@ -8,13 +8,29 @@ import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
 import Error from "./components/Error.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
+import UseContext from "./utils/UseContext.js";
 
 const AppLayout = () => {
-    return <div className="app">
+    const [userName,setUserName] = useState("");
+
+    useEffect(()=>{
+        const data = {
+            name: "sachi",
+        };
+        setUserName(data.name);
+    },[]);
+
+    return (
+     <UseContext.Provider value={{loggedInUser: userName , setUserName}}>
+    <div className="app">
+       
         <Header/>
         <Outlet />
+        
     </div>
-}
+    </UseContext.Provider>
+    );
+};
 
 const Grocery = lazy(()=> import("./components/Grocery.jsx"));
 const appRouter = createBrowserRouter([

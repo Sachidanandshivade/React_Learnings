@@ -1,12 +1,14 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard.jsx";
 import resList from "../utils/mockjData.js";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useContext} from "react";
 import Shimmer from "./Shimmer.jsx";
 import {Link} from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus.js";
+import UseContext from "../utils/UseContext.js";
 
 const Body = () => {
 
+    const {loggedInUser,setUserName} = useContext(UseContext);
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
     const [filteredList,setFilteredList] = useState([]);
 
@@ -32,6 +34,7 @@ const Body = () => {
         <div className="body bg-pink-100">
             <div className="flex justify-around">
                 <div className="search m-2 p-2 ">
+            
                     <input type="text" className="border border-solid border-black  focus:border-blue-500 focus:ring-2 focus:ring-blue-500" value={searchText} onChange={(e)=>{
                         setSearchText(e.target.value);
         
@@ -46,6 +49,10 @@ const Body = () => {
                     const filterList = listOfRestaurants.filter((res)=>Number(res.info.avgRating)>4.3);
                     setFilteredList(filterList);
                 }}>Top Rated Restaurants</button>
+            </div>
+            <div className="search m-4 p-4 flex items-center">
+                <label>UserName:</label>
+                <input className="border border-black p-2" value={loggedInUser} onChange={()=> setUserName(e.target.value)} />
             </div>
             <div className="flex flex-wrap">
             {
